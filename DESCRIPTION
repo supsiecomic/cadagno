@@ -11,5 +11,6 @@ License: `use_mit_license()`
 URL: https://github.com/supsiecomic/cadagno
 BugReports: https://github.com/supsiecomic/cadagno/issues
 Encoding: UTF-8
+Imports: TTR (>= 0.24.4)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
