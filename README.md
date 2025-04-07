@@ -6,7 +6,7 @@ The cadagno package is intended to (i) read and clean TOB-format data files crea
 > devtools::install_github("supsiecomic/cadagno")
 
 ## Dependencies
-None
+- TTR
 
 ## Usage
 assuming that TOB data files are found in "tob" directory, list the TOB files:
