@@ -312,14 +312,14 @@ get_precision <- function (var)
 {
     # read precision from file
     # more info in "precision/precision.txt"
-    precision <- data.frame(
+    df <- data.frame(
     var = c("Depth", "Depth_par", "Cond", "Temp", "sat", "DO_mg"
            ,"Turb", "PAR", "BGAPC", "Chl_A", "pH", "Redox", "H2S"),
     digits = c(2, 2, 4, 1, 1, 2, 1, 2, 4, 4, 1, 1, 1)  
     )
     
-    precision <- ifelse(sum(grepl(var, table[,1]))
-                       ,yes = table[grep(var,table[,1])[1],2]
+    precision <- ifelse(sum(grepl(var, df[,1]))
+                       ,yes = df[grep(var,df[,1])[1],2]
                        ,no  = FALSE
                        )
     return (precision)
