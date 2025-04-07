@@ -311,9 +311,13 @@ clean_TOB <- function(x
 get_precision <- function (var)
 {
     # read precision from file
-    table <- read.table("precision/precision.txt"
-                       ,sep = " ", header = FALSE
-                       )
+    # more info in "precision/precision.txt"
+    precision <- data.frame(
+    var = c("Depth", "Depth_par", "Cond", "Temp", "sat", "DO_mg"
+           ,"Turb", "PAR", "BGAPC", "Chl_A", "pH", "Redox", "H2S"),
+    digits = c(2, 2, 4, 1, 1, 2, 1, 2, 4, 4, 1, 1, 1)  
+    )
+    
     precision <- ifelse(sum(grepl(var, table[,1]))
                        ,yes = table[grep(var,table[,1])[1],2]
                        ,no  = FALSE
