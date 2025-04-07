@@ -1,0 +1,15 @@
+Package: cadagno
+Title: utiliy functions to prepare, clean and analyse lake Cadagno data
+Version: 1.0
+Authors@R:
+    person("Daniel", "Romero-Mujalli", , "daniel.romero@supsi.ch", role = c("aut", "cre"),
+           comment = c(ORCID = "https://orcid.org/0000-0002-7824-8706"))
+Author: Daniel Romero-Mujalli [aut, cre]
+Maintainer: Daniel Romero-Mujalli <daniel.romero@supsi.ch>
+Description: The cadagno package is intended to (i) read and clean TOB-format data files created by the measuring equipment at the Cadagno lake, and (ii) facilitate and automate the data analysis and plotting of the results.
+License: `use_mit_license()`
+URL: https://github.com/supsiecomic/cadagno
+BugReports: https://github.com/supsiecomic/cadagno/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

@@ -1,0 +1,13 @@
+Depth 2
+Depth_par 2
+Cond 4
+Temp 1
+sat 1
+DO_mg 2
+Turb 1
+PAR 2
+BGAPC 4
+Chl_A 4
+pH 1
+Redox 1
+H2S 1
