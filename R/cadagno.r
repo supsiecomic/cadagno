@@ -8,7 +8,7 @@
 # author:       Daniel Romero Mujalli
 # email:        daniel.romero@supsi.ch
 #
-# last update:  20250407
+# last update:  20250709
 #
 ###############################################################
 ###############################################################
@@ -315,7 +315,7 @@ get_precision <- function (var)
     df <- data.frame(
     var = c("Depth", "Depth_par", "Cond", "Temp", "sat", "DO_mg"
            ,"Turb", "PAR", "BGAPC", "Chl_A", "pH", "Redox", "H2S"),
-    digits = c(2, 2, 4, 1, 1, 2, 1, 2, 4, 4, 1, 1, 1)  
+    digits = c(2, 2, 4, 1, 1, 2, 1, 2, 2, 4, 1, 1, 1)  
     )
     
     precision <- ifelse(sum(grepl(var, df[,1]))
@@ -411,8 +411,8 @@ plot_set <- function(x
   if(set == "abio")
     set <- c("Temp", "Cond", "DO_mg", "Turb")
   if(set[1] == "bio")
-    set <- c("PAR", "Chl_A", "BGAPC")
-  foo <- x[, set]
+    set <- c("Chl_A", "BGAPC", "sat", "Turb", "PAR")
+  foo <- x[, names(x) %in% set]
   # standardize values so that they can be plotted in similar
   # scale
   foo <- sapply(X = foo, FUN = function(x) {
@@ -423,9 +423,9 @@ plot_set <- function(x
   # default margin values "mar" starting from bottom,
   # then going clockwise
   # $mar = c(5.1, 4.1, 4.1, 2.1)
-  custom_mar <- c(5.1
+  custom_mar <- c(2.0
                  ,4.1
-                 ,4.1 + round(ncol(x) * 0.5)
+                 ,2.1 + round(length(set) * 2)
                  ,5
                  )
   par(mar = custom_mar)
@@ -453,8 +453,8 @@ plot_set <- function(x
     # add x-axis on top
     # at: four levels c(0, 25%, 50%, 75%, next_ten)
     v <- x[,var]
-    min_v <- round(min(v), digits = get_precision(var))
-    max_v <- round(max(v), digits = get_precision(var))
+    min_v <- round(min(v), digits = 0)
+    max_v <- next_ten(max(v))
     dummy <- (max_v - min_v) / 4
     labels <- c(
       min_v
