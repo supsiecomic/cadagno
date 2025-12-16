@@ -518,6 +518,7 @@ plot_set <- function(
   )
   # create color palette
   n <- dim(foo)[2]
+  if(n < 3){ n <- 3} # prevent RColorBrewer warning when n < 3
   #mypalette <- viridis::magma(n)
   mypalette <- RColorBrewer::brewer.pal(n, name = Rbrewer_colorname)
   # replace light colors with colors from another palette
