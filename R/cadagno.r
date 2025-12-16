@@ -503,12 +503,10 @@ plot_set <- function(
   )
   par(mar = custom_mar)
   # create empty plot
-  # take as reference for x axis, the variable with
-  # highest value
-  dummy <- sapply(X = foo, FUN = max)
-  index <- which(dummy == max(dummy))[1]
+  # x axis should cover range (0,1)
+  xx <- seq(from = 0, to = 1, length.out = nrow(foo))
   plot(
-    x = foo[,index],#[zoom_selection, 1],
+    x = xx,#foo[zoom_selection, 1],
     y = -1 * x$Depth,#[zoom_selection],
     las = 1,
     xlab = "",
