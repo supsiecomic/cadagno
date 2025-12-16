@@ -521,9 +521,11 @@ plot_set <- function(
   # replace light colors with colors from another palette
   mypalette[mypalette == "#F7F7F7"] <- "#762A83"
   mypalette[mypalette == "#D1E5F0"] <- "#1B7837"
-  # plot the variables in set
+  # plot the variables in set (i.e., names(foo))
+  # keep in mind that names(foo) does not necessarily contain all
+  # names in set 
   i <- 1
-  for (var in set){
+  for (var in names(foo)){ # in set
     sma <- TTR::SMA(
       x = foo[,var],
       n = 10 # number of periods to average over
