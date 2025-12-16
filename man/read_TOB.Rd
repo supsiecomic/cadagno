@@ -4,15 +4,15 @@
 \alias{read_TOB}
 \title{read_TOB}
 \usage{
-read_TOB(fname, showunits = FALSE, outfile = FALSE, DEBUG = FALSE)
+read_TOB(fname, showunits = FALSE, outdir = FALSE, DEBUG = FALSE)
 }
 \arguments{
 \item{fname}{file path/name to open for reading}
 
 \item{showunits}{column names with parameter units}
 
-\item{outfile}{name of the output file. If false,
-then a default filename is used}
+\item{outdir}{character output directory.
+Default FALSE: no file is created}
 
 \item{DEBUG}{code maintenance only
 

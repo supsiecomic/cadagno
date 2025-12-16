@@ -4,20 +4,27 @@
 \alias{plot_set}
 \title{plot_set}
 \usage{
-plot_set(x, set = "abio", lwd = 1, Rbrewer_colorname = "RdBu", ...)
+plot_set(
+  x,
+  BL = "abio",
+  lwd = 1,
+  Rbrewer_colorname = "RdBu",
+  zoomIn = FALSE,
+  ...
+)
 }
 \arguments{
 \item{x}{cleaned .TOB dataframe}
-
-\item{set}{set of variables of interest (vector).
-Otherwise,
-"abio", to put Temp, Cond, DO_mg and Turb into a single plot
-"bio", PAR, Chl_A and BGAPC into single plot.}
 
 \item{...}{additional parameter to plot()
 
 OUTPUT
 nothing}
+
+\item{set}{set of variables of interest (vector).
+Otherwise,
+"abio", displays Temp, Cond, DO_mg and Turb in a single plot
+"bio", PAR, Chl_A and BGAPC into single plot.}
 }
 \description{
 DESCRIPTION

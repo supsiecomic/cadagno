@@ -13,8 +13,8 @@ clean_TOB(x, selection_method = FALSE, outfile = FALSE)
 measurements per depth value. Either by "random" sample or
 by taking the "mean"}
 
-\item{outfile}{name of the output file. If false,
-then a default filename is used
+\item{outfile}{character output file name
+Default FALSE: no file is created
 
 OUTPUT}
 }
