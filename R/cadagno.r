@@ -8,7 +8,10 @@
 # author:       Daniel Romero Mujalli
 # email:        daniel.romero@supsi.ch
 #
-# last update:  20251216
+# last update:  20250121
+#
+# CHANGE_LOG 
+# l.78-79 remove empty names (added)
 #
 ###############################################################
 ###############################################################
@@ -71,6 +74,9 @@ read_TOB <- function(
         # remove redundant information: 
         # name == "Datasets" since it gives the row numbers
         names <- names[-1]
+
+        # remove empty names
+        names <- names[-which(names == "")]
 
         # update old variable names
         names[names %in% "Oxy"] <- "sat"
