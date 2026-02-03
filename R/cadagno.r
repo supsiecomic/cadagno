@@ -76,7 +76,8 @@ read_TOB <- function(
         names <- names[-1]
 
         # remove empty names
-        names <- names[-which(names == "")]
+        if(length(which(names == "")) > 0)
+          names <- names[-which(names == "")]
 
         # update old variable names
         names[names %in% "Oxy"] <- "sat"
